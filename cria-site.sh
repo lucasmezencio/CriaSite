@@ -73,19 +73,15 @@ if ! grep "${dominio}" ${CAMINHO} >> /dev/null; then
                 read dir
                 echo ""
             done
+            
+            # Verificando se o DocumentRoot do Apache nao esta no padrao
+            echo "Qual o DocumentRoot do Apache?"
+            echo "(ex: '/home/www/', '/home/htdocs/' SEMPRE com a barra no final) [enter para padrao]"
+            read r_docroot
+            echo ""
 
-            while [[ "${r_docroot}" != "s" ]] && [[ "${r_docroot}" != "n" ]] && [[ "${r_docroot}" == "" ]] && [[ "${r_docroot}" != "nao" ]] && [[ "${r_docroot}" != "sim" ]]; do
-                echo "(Digite 's' ou 'n')"
-                echo "O DocumentRoot do Apache esta fora do padrao? [Digite 's' ou 'n']"
-                read r_docroot
-                echo ""
-            done
-
-            if [[ "${r_docroot}" == "s" ]] || [[ "${r_docroot}" == "sim" ]]; then
-                echo "Digite o caminho do DocumentRoot (ex: '/home/nome-de-usuario/www/' SEMPRE com a barra no final):"
-                read docroot
-                DOCROOT=${docroot}
-                echo ""
+            if [[ "${r_docroot}" != "" ]]; then
+                DOCROOT=${r_docroot}
             fi
 
             # Verificando se o diretorio ja existe, se nao, cria o diretorio,
