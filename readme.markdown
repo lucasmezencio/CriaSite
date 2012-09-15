@@ -1,8 +1,8 @@
-Script para criação de VirtualHosts no Ubuntu e Debian
--
+Um simples script para criação de VirtualHosts Apache no Ubuntu e Debian
 
-Autor
+A simple script to create Apache VirtualHosts in Ubuntu & Debian
 
-Lucas Mezêncio
 
 > Copie, modifique, distribua! =D
+
+> Fork, modify, distribute! =D
